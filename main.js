@@ -81,9 +81,10 @@ equals.addEventListener('click', function() {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 13) {
   let test = eval(result)
-  let rounded = test.toFixed(2)
-    field.innerHTML = rounded
+  result = test.toFixed(2)
+    field.innerHTML = result
     result = ""
+    console.log(result);
   }
 })
 
@@ -91,7 +92,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 48) {
     result += 0;
-    field.innerHTML += 0;
+    field.innerHTML = result;
     minimizeFontOnLength()
     isGreaterThan()
   }
@@ -100,7 +101,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 49) {
     result += 1;
-    field.innerHTML += 1;
+    field.innerHTML = result;
     minimizeFontOnLength()
     isGreaterThan()
   }
@@ -109,7 +110,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 50) {
     result += 2;
-    field.innerHTML += 2;
+    field.innerHTML = result;
     minimizeFontOnLength()
     isGreaterThan()
   }
@@ -118,7 +119,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 51) {
     result += 3;
-    field.innerHTML += 3;
+    field.innerHTML = result
     minimizeFontOnLength()
     isGreaterThan()
   }
@@ -127,7 +128,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 52) {
     result += 4;
-    field.innerHTML += 4;
+    field.innerHTML = result
     minimizeFontOnLength()
     isGreaterThan()
   }
@@ -136,16 +137,17 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 53) {
     result += 5
-    field.innerHTML += 5
+    field.innerHTML = result
     minimizeFontOnLength()
     isGreaterThan()
   }
 })
 
+
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 54) {
     result += 6
-    field.innerHTML += 6
+    field.innerHTML = result
     minimizeFontOnLength()
     isGreaterThan()
   }
@@ -154,7 +156,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 55) {
     result += 7
-    field.innerHTML += 7
+    field.innerHTML = result
     minimizeFontOnLength()
     isGreaterThan()
   }
@@ -163,7 +165,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 56) {
     result += 8
-    field.innerHTML += 8
+    field.innerHTML = result
     minimizeFontOnLength()
     isGreaterThan()
   }
@@ -172,7 +174,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 57) {
     result += 9
-    field.innerHTML += 9
+    field.innerHTML = result
     minimizeFontOnLength()
     isGreaterThan()
   }
