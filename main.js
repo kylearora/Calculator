@@ -11,54 +11,7 @@ let result = "";
 let fieldLength = false
 field.innerHTML = ""
 
-clear.addEventListener('click', function(){
-  result = ""
-  fieldLength = false
-  field.innerHTML = result
-})
-
-modulo.addEventListener('click', function() {
-  minimizeFontOnLength()
-  isGreaterThanModulo()
-  result += (modulo.id)
-  field.innerHTML += modulo.id
-  console.log(modulo.id)
-})
-
-decimal.addEventListener('click', function() {
-  minimizeFontOnLength()
-  result += (decimal.id)
-  field.innerHTML = result
-  console.log(decimal.id)
-})
-
-squareRoot.addEventListener('click', function() {
-  minimizeFontOnLength()
-  let root = Math.sqrt(result)
-  field.innerHTML = root.toFixed(4)
-  console.log(squareRoot.id)
-})
-
-equals.addEventListener('click', function() {
-  if (field.innerHTML.length == 0){
-    window.alert("Put some numbers in, bro!")
-  } else {
-  let test = eval(result)
-  let rounded = test.toFixed(2)
-  field.innerHTML = rounded
-  result = ""
-}
-})
-
-document.addEventListener('keydown', function(event) {
-  if (event.keyCode === 13) {
-  let test = eval(result)
-  let rounded = test.toFixed(2)
-    field.innerHTML = rounded
-    result = ""
-  }
-})
-
+//Basic functions
 for (var i = 0; i < number.length; i++) {
   let value = number[i].id
   number[i].addEventListener('click', function() {
@@ -80,6 +33,152 @@ for (var i = 0; i < operator.length; i++) {
   })
 }
 
+clear.addEventListener('click', function(){
+  result = ""
+  fieldLength = false
+  field.innerHTML = result
+})
+
+//Add decimal key to the calculator
+decimal.addEventListener('click', function() {
+  minimizeFontOnLength()
+  result += (decimal.id)
+  field.innerHTML = result
+  console.log(decimal.id)
+})
+
+//Add Modulo function key to the calculator
+modulo.addEventListener('click', function() {
+  minimizeFontOnLength()
+  isGreaterThanModulo()
+  result += (modulo.id)
+  field.innerHTML += modulo.id
+  console.log(modulo.id)
+})
+
+//Add Square Root function to the calculator
+squareRoot.addEventListener('click', function() {
+  minimizeFontOnLength()
+  let root = Math.sqrt(result)
+  field.innerHTML = root.toFixed(4)
+  console.log(squareRoot.id)
+})
+
+// Makes sure there are numbers in the field before pressing the equals button
+equals.addEventListener('click', function() {
+  if (field.innerHTML.length == 0){
+    window.alert("Put some numbers in, bro!")
+  } else {
+  let test = eval(result)
+  let rounded = test.toFixed(2)
+  field.innerHTML = rounded
+  result = ""
+  }
+})
+
+
+//Press "Enter" key to get calculation
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+  let test = eval(result)
+  let rounded = test.toFixed(2)
+    field.innerHTML = rounded
+    result = ""
+  }
+})
+
+//Use numerical keys to input numbers into the field instead of clicking on buttons
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 48) {
+    result += 0;
+    field.innerHTML += 0;
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 49) {
+    result += 1;
+    field.innerHTML += 1;
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 50) {
+    result += 2;
+    field.innerHTML += 2;
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 51) {
+    result += 3;
+    field.innerHTML += 3;
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 52) {
+    result += 4;
+    field.innerHTML += 4;
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 53) {
+    result += 5
+    field.innerHTML += 5
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 54) {
+    result += 6
+    field.innerHTML += 6
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 55) {
+    result += 7
+    field.innerHTML += 7
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 56) {
+    result += 8
+    field.innerHTML += 8
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 57) {
+    result += 9
+    field.innerHTML += 9
+    minimizeFontOnLength()
+    isGreaterThan()
+  }
+})
+
+//Changes font size in the field if more than 10 characters are keyed in
 function minimizeFontOnLength() {
   console.log(field.innerHTML.length)
   if (field.innerHTML.length >= 11){
@@ -89,6 +188,7 @@ function minimizeFontOnLength() {
   }
 }
 
+//Sets an alert to stop typing once the field runs out of space
 function isGreaterThan() {
   if (field.innerHTML.length > 16) {
     fieldLength = true
@@ -97,6 +197,7 @@ function isGreaterThan() {
   return fieldLength;
 }
 
+//Sets an alert to stop typing once the field runs out of spcae for the Modulo key
 function isGreaterThanModulo() {
   if (field.innerHTML.length > 6) {
     fieldLength = true
