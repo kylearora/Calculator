@@ -15,10 +15,10 @@ field.innerHTML = ""
 for (var i = 0; i < number.length; i++) {
   let value = number[i].id
   number[i].addEventListener('click', function() {
-    minimizeFontOnLength()
     if (isGreaterThan() == false) {
       result += (value)
       field.innerHTML = result
+      minimizeFontOnLength()
     }
   })
 }
@@ -49,10 +49,10 @@ decimal.addEventListener('click', function() {
 
 //Add Modulo function key to the calculator
 modulo.addEventListener('click', function() {
-  minimizeFontOnLength()
-  isGreaterThanModulo()
+
   result += (modulo.id)
-  field.innerHTML += modulo.id
+  isGreaterThanModulo()
+  field.innerHTML = result
   console.log(modulo.id)
 })
 
@@ -183,7 +183,7 @@ document.addEventListener('keydown', function(event) {
 //Changes font size in the field if more than 10 characters are keyed in
 function minimizeFontOnLength() {
   console.log(field.innerHTML.length)
-  if (field.innerHTML.length >= 11){
+  if (field.innerHTML.length >= 12){
     document.getElementById('field').style.fontSize = "22px"
   } else {
     document.getElementById('field').style.fontSize = "33px"
