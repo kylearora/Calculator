@@ -49,9 +49,8 @@ decimal.addEventListener('click', function() {
 
 //Add Modulo function key to the calculator
 modulo.addEventListener('click', function() {
-
-  result += (modulo.id)
   isGreaterThanModulo()
+  result += (modulo.id)
   field.innerHTML = result
   console.log(modulo.id)
 })
@@ -75,7 +74,6 @@ equals.addEventListener('click', function() {
   result = ""
   }
 })
-
 
 //Press "Enter" key to get calculation
 document.addEventListener('keydown', function(event) {
